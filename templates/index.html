@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+    function httpGetAsync(theURL, callback){
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function(){
+            if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
+               callback(xmlHttp.responseText);
+        }
+        xmlHttp.open("GET", theURL, true);
+        xmlHttp.send(null);
+    }
+    httpGetAsync("http://127.0.0.1:5600/store", function(response){
+    alert(response)
+    })
+
+
+</script>
+</head>
+<body>
+<div id="myElement">
+    Hello, world!
+
+</div>
+</body>
+</html>
